@@ -2,12 +2,13 @@ import Footer from './Footer';
 import Greetings from './Greetings';
 import './App.css';
 import Clock from './Clock';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import EventHandler from './EventHandler';
 
 function App() {
   const [count, setCount] = useState(0)
   const [showMessages, setShowMessages] = useState(false)
+  const items = ['Apple', 'Banana', 'Orange', 'Mango'];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -37,6 +38,12 @@ function App() {
       <button onClick={()=>setShowMessages(!showMessages)}>Toggle Message</button>
       <div>{showMessages && 'Hello, React Event Handling!'}</div>
       <EventHandler />
+
+      <div>
+        {items.map((ele, index) => (
+          <div key={index}>{ele}</div>
+        ))}
+      </div>
      </main>
     </div>
   );
