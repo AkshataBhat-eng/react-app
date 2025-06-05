@@ -1,6 +1,6 @@
 // import Footer from './Footer';
-// import Greetings from './Greetings';
-// import './App.css';
+import Greetings from './Greetings';
+import './App.css';
 // import Clock from './Clock';
 import React, { useEffect, useState } from "react";
 import EventHandler from "./EventHandler";
@@ -40,9 +40,9 @@ function App() {
       <h1>Hello World</h1>
      <Clock />
      </div>
-     <div>
+     <div> */}
       <Greetings name='Akshata' message='Good Day!' />
-      <button onClick={() => setCount(prevCount => prevCount + 1)}>
+      {/* <button onClick={() => setCount(prevCount => prevCount + 1)}>
         Increment
       </button>
       <div>{count}</div>
@@ -59,7 +59,7 @@ function App() {
         ))}
       </div>
      </main> */}
-      <form>
+      <form className="myClass">
         <input
           type="text"
           // value={username}
@@ -77,8 +77,20 @@ function App() {
         />
         {emailError && <p style={{ color: "red" }}>{emailError}</p>}
 
-        <button type="submit" onClick={(e)=>handleSubmit(e)}>Submit</button>
+        <button type="submit" onClick={(e) => handleSubmit(e)}>
+          Submit
+        </button>
       </form>
+      <div
+        style={{
+          marginTop: "20px",
+          backgroundColor: "lightblue",
+          padding: "10px",
+          borderRadius: "5px",
+        }}
+      >
+        Inline Styling Example
+      </div>
     </div>
   );
 }
