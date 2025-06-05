@@ -3,9 +3,11 @@ import Greetings from './Greetings';
 import './App.css';
 import Clock from './Clock';
 import { useEffect, useState } from 'react';
+import EventHandler from './EventHandler';
 
 function App() {
   const [count, setCount] = useState(0)
+  const [showMessages, setShowMessages] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -19,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-     <div>
+     {/* <div>
       <h1>Hello World</h1>
      <Clock />
      </div>
@@ -30,7 +32,12 @@ function App() {
       </button>
       <div>{count}</div>
       <Footer />
-     </div>
+     </div> */}
+     <main>
+      <button onClick={()=>setShowMessages(!showMessages)}>Toggle Message</button>
+      <div>{showMessages && 'Hello, React Event Handling!'}</div>
+      <EventHandler />
+     </main>
     </div>
   );
 }
