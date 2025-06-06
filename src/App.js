@@ -1,6 +1,9 @@
 // import Footer from './Footer';
-import Greetings from './Greetings';
-import './App.css';
+import Greetings from "./Greetings";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./Home";
+import About from "./About";
 // import Clock from './Clock';
 import React, { useEffect, useState } from "react";
 import EventHandler from "./EventHandler";
@@ -36,12 +39,28 @@ function App() {
 
   return (
     <div className="App">
+      <Router>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/home" exact element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
       {/* <div>
       <h1>Hello World</h1>
      <Clock />
      </div>
      <div> */}
-      <Greetings name='Akshata' message='Good Day!' />
+      <Greetings name="Akshata" message="Good Day!" />
       {/* <button onClick={() => setCount(prevCount => prevCount + 1)}>
         Increment
       </button>
