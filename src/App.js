@@ -7,6 +7,7 @@ import About from "./About";
 // import Clock from './Clock';
 import React, { useEffect, useState } from "react";
 import EventHandler from "./EventHandler";
+import TodoApp from "./ToDo";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -48,11 +49,15 @@ function App() {
             <li>
               <Link to="/about">About</Link>
             </li>
+            <li>
+              <Link to="/todo">To-Do</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
           <Route path="/home" exact element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/todo" element={<TodoApp />} />
         </Routes>
       </Router>
       {/* <div>
@@ -60,7 +65,7 @@ function App() {
      <Clock />
      </div>
      <div> */}
-      <Greetings name="Akshata" message="Good Day!" />
+      {/* <Greetings name="Akshata" message="Good Day!" /> */}
       {/* <button onClick={() => setCount(prevCount => prevCount + 1)}>
         Increment
       </button>
@@ -78,14 +83,14 @@ function App() {
         ))}
       </div>
      </main> */}
-      <form className="myClass">
+      {/* <form className="myClass">
         <input
           type="text"
           // value={username}
           // onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
-        />
-        <input
+        /> */}
+        {/* <input
           type="email"
           // value={email}
           // onChange={(e) => {
@@ -109,7 +114,7 @@ function App() {
         }}
       >
         Inline Styling Example
-      </div>
+      </div> */}
     </div>
   );
 }
